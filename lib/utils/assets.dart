@@ -32,7 +32,7 @@ const img_end_level = "assets/images/home/end_level.png";
 const img_wrong_answer = "assets/images/quiz/wrong_answer.png";
 
 // quiz
-const img_next_quiz_question = "assets/images/quiz/next.png";
+const img_nexikommerce_question = "assets/images/quiz/next.png";
 const img_previous_quiz_question = "assets/images/quiz/previous.png";
 const img_next_home = "assets/images/quiz/home.png";
 const img_discussion = "assets/images/quiz/discussion_video.png";

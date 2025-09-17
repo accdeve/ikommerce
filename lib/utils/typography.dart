@@ -1,145 +1,93 @@
 import 'package:flutter/material.dart';
 import 'package:ikommerce/utils/colors.dart';
 
-// FONT POPPINS
-const String _fontPoppins = 'Poppins';
+const String poppinsFont = 'Poppins';
+const String robotoFont = 'Roboto';
 
-// bold
-const poppinsBold20 = TextStyle(
-  color: black,
-  fontFamily: _fontPoppins,
+// ================= POPPINS =================
+
+// Heading 28 Bold
+TextStyle poppinsHeading28Bold = const TextStyle(
+  fontFamily: poppinsFont,
+  fontSize: 28,
+  fontWeight: FontWeight.bold,
+  color: black
+);
+
+// Body 12 Regular
+TextStyle poppinsBody12Regular = const TextStyle(
+  fontFamily: poppinsFont,
+  fontSize: 12,
+  fontWeight: FontWeight.normal,
+  color: black
+);
+
+// Body 16 Regular
+TextStyle poppinsBody16Regular = const TextStyle(
+  fontFamily: poppinsFont,
+  fontSize: 16,
+  fontWeight: FontWeight.normal,
+  color: black
+);
+
+// Body 12 Light
+TextStyle poppinsBody12Light = const TextStyle(
+  fontFamily: poppinsFont,
+  fontSize: 12,
+  fontWeight: FontWeight.w300, 
+  color: black
+);
+
+// Body 12 Medium
+TextStyle poppinsBody12Medium = const TextStyle(
+  fontFamily: poppinsFont,
+  fontSize: 12,
+  fontWeight: FontWeight.w500, 
+  color: black
+);
+
+// Appear 20 SemiBold
+TextStyle poppinsAppear20SemiBold = const TextStyle(
+  fontFamily: poppinsFont,
   fontSize: 20,
-  fontWeight: FontWeight.w700,
+  fontWeight: FontWeight.w600, 
+  color: black
 );
 
-const poppinsBold18 = TextStyle(
-  color: black,
-  fontFamily: _fontPoppins,
-  fontSize: 18,
-  fontWeight: FontWeight.w700,
-);
+// ================= ROBOTO =================
 
-const poppinsBold16 = TextStyle(
-  color: black,
-  fontFamily: _fontPoppins,
-  fontSize: 16,
-  fontWeight: FontWeight.w700,
-);
-
-const poppinsBold14 = TextStyle(
-  color: black,
-  fontFamily: _fontPoppins,
-  fontSize: 14,
-  fontWeight: FontWeight.w700,
-);
-
-const poppinsBold12 = TextStyle(
-  color: black,
-  fontFamily: _fontPoppins,
+// Body 12 Regular
+TextStyle robotoBody12Regular = const TextStyle(
+  fontFamily: robotoFont,
   fontSize: 12,
-  fontWeight: FontWeight.w700,
+  fontWeight: FontWeight.normal,
+
+  color: black
 );
 
-// semi bold
-const poppinsSemiBold12 = TextStyle(
-  color: black,
-  fontFamily: _fontPoppins,
+// Body 12 Bold
+TextStyle robotoBody12Bold = const TextStyle(
+  fontFamily: robotoFont,
   fontSize: 12,
-  fontWeight: FontWeight.w600,
+  fontWeight: FontWeight.bold,
+
+  color: black
 );
 
-const poppinsSemiBold16 = TextStyle(
-  color: black,
-  fontFamily: _fontPoppins,
-  fontSize: 16,
-  fontWeight: FontWeight.w600,
-);
-
-// medium
-const poppinsMedium10 = TextStyle(
-  color: black,
-  fontFamily: _fontPoppins,
+// Body 10 Regular
+TextStyle robotoBody10Regular = const TextStyle(
+  fontFamily: robotoFont,
   fontSize: 10,
-  fontWeight: FontWeight.w500,
+  fontWeight: FontWeight.normal,
+
+  color: black
 );
 
-const poppinsMedium14 = TextStyle(
-  color: black,
-  fontFamily: _fontPoppins,
-  fontSize: 14,
-  fontWeight: FontWeight.w500,
-);
-
-const poppinsMedium16 = TextStyle(
-  color: black,
-  fontFamily: _fontPoppins,
+// Heading 16 Bold
+TextStyle robotoHeading16Bold = const TextStyle(
+  fontFamily: robotoFont,
   fontSize: 16,
-  fontWeight: FontWeight.w500,
-);
+  fontWeight: FontWeight.bold,
 
-// regular
-const poppinsRegular10 = TextStyle(
-  color: black,
-  fontFamily: _fontPoppins,
-  fontSize: 10,
-  fontWeight: FontWeight.w400,
-);
-
-const poppinsRegular12 = TextStyle(
-  color: black,
-  fontFamily: _fontPoppins,
-  fontSize: 12,
-  fontWeight: FontWeight.w400,
-);
-
-const poppinsRegular14 = TextStyle(
-  color: black,
-  fontFamily: _fontPoppins,
-  fontSize: 14,
-  fontWeight: FontWeight.w400,
-);
-
-const poppinsRegular18 = TextStyle(
-  color: black,
-  fontFamily: _fontPoppins,
-  fontSize: 18,
-  fontWeight: FontWeight.w400,
-);
-
-// light
-const poppinsLight12 = TextStyle(
-  color: black,
-  fontFamily: _fontPoppins,
-  fontSize: 12,
-  fontWeight: FontWeight.w300,
-);
-
-const poppinsLight14 = TextStyle(
-  color: black,
-  fontFamily: _fontPoppins,
-  fontSize: 14,
-  fontWeight: FontWeight.w300,
-);
-
-const poppinsLight16 = TextStyle(
-  color: black,
-  fontFamily: _fontPoppins,
-  fontSize: 16,
-  fontWeight: FontWeight.w300,
-);
-
-const poppinsLight20 = TextStyle(
-  color: black,
-  fontFamily: _fontPoppins,
-  fontSize: 20,
-  fontWeight: FontWeight.w300,
-);
-
-//FONT PROTEST_STRIKE
-const String _fontProtestStrike = 'Protest_Strike';
-
-const protestStrikeRegular32 = TextStyle(
-  color: white,
-  fontFamily: _fontProtestStrike,
-  fontSize: 32,
+  color: black
 );

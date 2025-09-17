@@ -1,6 +1,8 @@
 // Source:
 // https://medium.com/flutter-community/handling-network-calls-like-a-pro-in-flutter-31bd30c86be1
 
+// ignore_for_file: library_prefixes, prefer_typing_uninitialized_variables
+
 import 'dart:convert';
 import 'dart:io';
 import 'package:http/http.dart' as http;
