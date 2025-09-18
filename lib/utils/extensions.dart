@@ -158,37 +158,6 @@ Future<File> getTemporaryFileFromAsset(String assetPath) async {
   return await tempFile.writeAsBytes(byteData.buffer.asUint8List());
 }
 
-String? getYouTubeVideoId(String url) {
-  final RegExp regex = RegExp(
-    r'(?:https?://)?(?:www\.)?youtube\.com\/watch\?v=([a-zA-Z0-9_-]+)',
-    caseSensitive: false,
-    multiLine: false,
-  );
-
-  final Match? match = regex.firstMatch(url);
-
-  return match?.group(1);
-}
-
-Future<void> saveLanguageCode(String code) async {
-  final prefs = await SharedPreferences.getInstance();
-  await prefs.setString('kode_language', code);
-}
-
-Future<void> updateLanguageCode(String newCode) async {
-  final prefs = await SharedPreferences.getInstance();
-  if (prefs.containsKey('kode_language')) {
-    await prefs.setString('kode_language', newCode);
-  } else {
-    debugPrint('Key kode_language tidak ditemukan');
-  }
-}
-
-Future<String?> getLanguageCode() async {
-  final prefs = await SharedPreferences.getInstance();
-  return prefs.getString('kode_language');
-}
-
 String shortenText(String text, {int maxLength = 5}) {
   if (text.length > maxLength) {
     return '${text.substring(0, maxLength)}...';

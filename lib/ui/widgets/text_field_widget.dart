@@ -46,6 +46,7 @@ class CustomTextField extends StatefulWidget {
   final int? maxLength;
   final List<TextInputFormatter>? inputFormatter;
   final FocusNode? focusNode;
+  final bool isUsingPadding;
 
   const CustomTextField({
     super.key,
@@ -58,7 +59,7 @@ class CustomTextField extends StatefulWidget {
     this.prefixText,
     this.textAlign,
     this.enabled = true,
-    this.fillColor = textPrimaryInverted,
+    this.fillColor = white,
     this.onTap,
     this.isLoading = false,
     this.autofocus = false,
@@ -76,6 +77,7 @@ class CustomTextField extends StatefulWidget {
     this.prefixIcons,
     this.suffixIcons,
     this.autoValidateMode = AutovalidateMode.disabled,
+    this.isUsingPadding = true,
   });
 
   @override
@@ -171,7 +173,7 @@ class _TextFieldWidgetState extends State<CustomTextField> {
                 : poppinsBody16Regular,
             filled: true,
             fillColor:
-                widget.enabled ? widget.fillColor : const Color(0xFFF6F7F9),
+                widget.enabled ? widget.fillColor : white,
             disabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(10),
               borderSide: BorderSide(color: black.withOpacity(0.5), width: 2),
@@ -232,7 +234,7 @@ class _TextFieldWidgetState extends State<CustomTextField> {
             'Password minimal 8 karakter',
             style: poppinsBody12Light.copyWith(color: red),
           ),
-        SizedBox(height: 8)
+        SizedBox(height: widget.isUsingPadding ? 8 : 0)
       ],
     );
   }

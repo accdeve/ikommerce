@@ -4,7 +4,7 @@ import 'package:ikommerce/ui/widgets/text_field_widget.dart';
 import 'package:ikommerce/utils/colors.dart';
 import 'package:ikommerce/utils/typography.dart';
 
-void main(List<String> args) {
+void main() {
   runApp(const MaterialApp(
     home: LoginPage(),
   ));

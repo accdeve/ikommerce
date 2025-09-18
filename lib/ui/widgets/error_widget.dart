@@ -12,10 +12,10 @@ Widget errorWidget(BoxConstraints constraints) {
       Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Image.asset(
-            img_wifi,
-            height: 100,
-          ),
+          // Image.asset(
+          //   img_wifi,
+          //   height: 100,
+          // ),
           const SizedBox(height: 10),
           Text(
             "Something went wrong.",

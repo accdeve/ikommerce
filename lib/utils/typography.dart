@@ -30,10 +30,33 @@ TextStyle poppinsBody16Regular = const TextStyle(
   color: black
 );
 
+// Body 16 Medium
+TextStyle poppinsBody16Medium = const TextStyle(
+  fontFamily: poppinsFont,
+  fontSize: 16,
+  fontWeight: FontWeight.w700,
+  color: black
+);
+
 // Body 12 Light
 TextStyle poppinsBody12Light = const TextStyle(
   fontFamily: poppinsFont,
   fontSize: 12,
+  fontWeight: FontWeight.w300, 
+  color: black
+);
+
+
+TextStyle poppinsBody10Medium = const TextStyle(
+  fontFamily: poppinsFont,
+  fontSize: 10,
+  fontWeight: FontWeight.w500, 
+  color: black
+);
+
+TextStyle poppinsBody10Light = const TextStyle(
+  fontFamily: poppinsFont,
+  fontSize: 10,
   fontWeight: FontWeight.w300, 
   color: black
 );
