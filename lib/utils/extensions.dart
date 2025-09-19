@@ -4,7 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:path_provider/path_provider.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+import 'package:intl/intl.dart';
 import 'package:ikommerce/utils/routes.dart' as app_route;
 
 void backToRoot(context) {
@@ -158,9 +158,19 @@ Future<File> getTemporaryFileFromAsset(String assetPath) async {
   return await tempFile.writeAsBytes(byteData.buffer.asUint8List());
 }
 
-String shortenText(String text, {int maxLength = 5}) {
+String shortenText(String text, {int maxLength = 40}) {
   if (text.length > maxLength) {
     return '${text.substring(0, maxLength)}...';
   }
   return text;
+}
+
+
+String formatRupiah(num number) {
+  final formatter = NumberFormat.currency(
+    locale: 'id_ID',
+    symbol: 'Rp ',
+    decimalDigits: 0,
+  );
+  return formatter.format(number);
 }

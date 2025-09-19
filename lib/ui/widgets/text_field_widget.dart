@@ -47,6 +47,7 @@ class CustomTextField extends StatefulWidget {
   final List<TextInputFormatter>? inputFormatter;
   final FocusNode? focusNode;
   final bool isUsingPadding;
+  final bool isCompact;
 
   const CustomTextField({
     super.key,
@@ -78,6 +79,7 @@ class CustomTextField extends StatefulWidget {
     this.suffixIcons,
     this.autoValidateMode = AutovalidateMode.disabled,
     this.isUsingPadding = true,
+    this.isCompact = false,
   });
 
   @override
@@ -158,48 +160,45 @@ class _TextFieldWidgetState extends State<CustomTextField> {
             prefixIcon: widget.prefixIcons,
             contentPadding: EdgeInsets.fromLTRB(
                 10,
-                14,
+                widget.isCompact ? 10 : 12,
                 widget.inputType == InputType.password ||
                         widget.inputType == InputType.option ||
                         widget.inputType == InputType.search
                     ? 4
                     : 20,
-                14),
+                widget.isCompact ? 4 : 12),
             hintText: widget.inputType == InputType.phone && _focus.hasFocus
                 ? null
                 : widget.hintText,
-            hintStyle: widget.isHint == false
-                ? null
-                : poppinsBody16Regular,
+            hintStyle: widget.isHint == false ? null : poppinsBody16Regular,
             filled: true,
-            fillColor:
-                widget.enabled ? widget.fillColor : white,
+            fillColor: widget.enabled ? widget.fillColor : white,
             disabledBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(10),
+              borderRadius: BorderRadius.circular(16),
               borderSide: BorderSide(color: black.withOpacity(0.5), width: 2),
             ),
             enabledBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(10),
+              borderRadius: BorderRadius.circular(16),
               borderSide: BorderSide(
                   color: _showEmailError || _showPasswordError
                       ? red
-                      : black.withOpacity(0.5),
+                      : Color(0xffc9c9c9),
                   width: 2),
             ),
             focusedBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(10),
+              borderRadius: BorderRadius.circular(16),
               borderSide: BorderSide(
                   color: _showEmailError || _showPasswordError
                       ? red
-                      : black.withOpacity(0.5),
+                      : primary,
                   width: 2),
             ),
             errorBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(10),
+              borderRadius: BorderRadius.circular(16),
               borderSide: const BorderSide(color: danger, width: 2),
             ),
             focusedErrorBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(10),
+              borderRadius: BorderRadius.circular(16),
               borderSide: const BorderSide(color: danger, width: 2),
             ),
             suffixIcon: widget.isLoading!
