@@ -1,22 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:ikommerce/ui/screen/user/order/widget/order_widget.dart';
 import 'package:ikommerce/utils/assets.dart';
 
 void main(List<String> args) {
   runApp(const MaterialApp(
-    home: OrderPage(),
+    home: OrderDetailPage(),
   ));
 }
 
-class OrderPage extends StatelessWidget {
-  const OrderPage({super.key});
+class OrderDetailPage extends StatelessWidget {
+  const OrderDetailPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Order"),
+        title: const Text("Order Detail"),
         centerTitle: true,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),

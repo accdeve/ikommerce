@@ -46,6 +46,12 @@ TextStyle poppinsBody12Light = const TextStyle(
   color: black
 );
 
+TextStyle poppinsBody12Bold = const TextStyle(
+  fontFamily: poppinsFont,
+  fontSize: 12,
+  fontWeight: FontWeight.bold, 
+  color: black
+);
 
 TextStyle poppinsBody10Medium = const TextStyle(
   fontFamily: poppinsFont,
