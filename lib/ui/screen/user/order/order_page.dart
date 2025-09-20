@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:ikommerce/ui/screen/user/order/widget/order_widget.dart';
 import 'package:ikommerce/utils/assets.dart';
+import 'package:ikommerce/utils/typography.dart';
 
 void main(List<String> args) {
   runApp(const MaterialApp(
@@ -16,7 +17,7 @@ class OrderPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Order"),
+        title: Text("Order", style: poppins20SemiBold,),
         centerTitle: true,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),

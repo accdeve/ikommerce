@@ -38,6 +38,14 @@ TextStyle poppinsBody16Medium = const TextStyle(
   color: black
 );
 
+// Body 16 Medium
+TextStyle poppinsBody16Bold = const TextStyle(
+  fontFamily: poppinsFont,
+  fontSize: 16,
+  fontWeight: FontWeight.bold,
+  color: black
+);
+
 // Body 12 Light
 TextStyle poppinsBody12Light = const TextStyle(
   fontFamily: poppinsFont,
@@ -76,7 +84,7 @@ TextStyle poppinsBody12Medium = const TextStyle(
 );
 
 // Appear 20 SemiBold
-TextStyle poppinsAppear20SemiBold = const TextStyle(
+TextStyle poppins20SemiBold = const TextStyle(
   fontFamily: poppinsFont,
   fontSize: 20,
   fontWeight: FontWeight.w600, 
@@ -118,5 +126,13 @@ TextStyle robotoHeading16Bold = const TextStyle(
   fontSize: 16,
   fontWeight: FontWeight.bold,
 
+  color: black
+);
+
+// Body 16 Regular
+TextStyle robotoBody16Regular = const TextStyle(
+  fontFamily: robotoFont,
+  fontSize: 16,
+  fontWeight: FontWeight.normal,
   color: black
 );
