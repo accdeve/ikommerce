@@ -102,6 +102,22 @@ TextStyle robotoBody12Regular = const TextStyle(
   color: black
 );
 
+// Body 12 Regular
+TextStyle robotoBody12Light = const TextStyle(
+  fontFamily: robotoFont,
+  fontSize: 12,
+  fontWeight: FontWeight.w300,
+  color: black
+);
+
+// Body 12 Regular
+TextStyle robotoBody14Light = const TextStyle(
+  fontFamily: robotoFont,
+  fontSize: 14,
+  fontWeight: FontWeight.w300,
+  color: black
+);
+
 // Body 12 Bold
 TextStyle robotoBody12Bold = const TextStyle(
   fontFamily: robotoFont,
@@ -124,6 +140,14 @@ TextStyle robotoBody10Regular = const TextStyle(
 TextStyle robotoHeading16Bold = const TextStyle(
   fontFamily: robotoFont,
   fontSize: 16,
+  fontWeight: FontWeight.bold,
+
+  color: black
+);
+
+TextStyle robotoHeading20Bold = const TextStyle(
+  fontFamily: robotoFont,
+  fontSize: 20,
   fontWeight: FontWeight.bold,
 
   color: black

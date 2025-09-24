@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:ikommerce/ui/screen/user/order/widget/list_stuff_widget.dart';
-import 'package:ikommerce/ui/screen/user/order/widget/order_widget.dart';
 import 'package:ikommerce/ui/widgets/button_widget.dart';
 import 'package:ikommerce/ui/widgets/title_widget.dart';
 import 'package:ikommerce/utils/assets.dart';
@@ -67,36 +66,23 @@ class OrderDetailPage extends StatelessWidget {
                   ),
                 ],
               ),
-              const SizedBox(
-                height: 8,
-              ),
+              const SizedBox(height: 8),
               const Divider(),
-              const SizedBox(
-                height: 8,
-              ),
+              const SizedBox(height: 8),
 
               // address
-              titleWidget(imagePath: iconCart, text: "Address"),
+              titleWidget(imagePath: iconAddress, text: "Address"),
               Text(
                   "Jl Raya aji kelana dimana anak saya dimana papa saya, anak kampung tuan ada di pasar baru",
                   style: robotoBody16Regular),
 
-              const SizedBox(
-                height: 8,
-              ),
+              const SizedBox(height: 8),
               const Divider(),
-              const SizedBox(
-                height: 8,
-              ),
-              titleWidget(imagePath: iconCart, text: "Time"),
-              Text(
-                "21:40, 10 September 2025",
-                style: robotoBody16Regular,
-              ),
+              const SizedBox(height: 8),
+              titleWidget(imagePath: iconTime, text: "Time"),
+              Text("21:40, 10 September 2025", style: robotoBody16Regular),
 
-              const SizedBox(
-                height: 8,
-              ),
+              const SizedBox(height: 8),
               const Divider(),
               const SizedBox(
                 height: 8,

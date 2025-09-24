@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:ikommerce/utils/colors.dart';
 import 'package:ikommerce/utils/extensions.dart';
 import 'package:ikommerce/utils/typography.dart';
 

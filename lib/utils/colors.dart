@@ -8,7 +8,9 @@ const grayBlack = Color(0xffC9C9C9);
 const gray = Color(0xffD9D9D9);
 const grayLight = Color(0xffE6E6E6);
 const black = Color(0xff222831);
-const white = Color(0xffF5F5F5);
+const white = Color(0xffFafafa);
+const whiteFill = Color(0xffFafafa);
+const stroke = Color(0xffe6e6e6);
 
 const bgColor = Color(0xFFF4F3F9);
 const purpleBlue = Color(0xFF0B4BAF);
