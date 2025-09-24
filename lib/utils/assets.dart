@@ -7,3 +7,4 @@ const iconCart = 'assets/image/home/cart.png';
 const iconAddress = 'assets/image/order/address.png';
 const iconTime = 'assets/image/order/time.png';
 const iconDescription = 'assets/image/detail_stuff/description.png';
+const iconChange = 'assets/image/checkout/change.png';

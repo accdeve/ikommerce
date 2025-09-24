@@ -118,6 +118,13 @@ TextStyle robotoBody14Light = const TextStyle(
   color: black
 );
 
+TextStyle robotoBody16Light = const TextStyle(
+  fontFamily: robotoFont,
+  fontSize: 16,
+  fontWeight: FontWeight.w300,
+  color: black
+);
+
 // Body 12 Bold
 TextStyle robotoBody12Bold = const TextStyle(
   fontFamily: robotoFont,
@@ -132,6 +139,15 @@ TextStyle robotoBody10Regular = const TextStyle(
   fontFamily: robotoFont,
   fontSize: 10,
   fontWeight: FontWeight.normal,
+
+  color: black
+);
+
+// Heading 16 Bold
+TextStyle robotoHeading14Bold = const TextStyle(
+  fontFamily: robotoFont,
+  fontSize: 14,
+  fontWeight: FontWeight.bold,
 
   color: black
 );
