@@ -170,15 +170,15 @@ class _TextFieldWidgetState extends State<CustomTextField> {
             hintText: widget.inputType == InputType.phone && _focus.hasFocus
                 ? null
                 : widget.hintText,
-            hintStyle: widget.isHint == false ? null : poppinsBody16Regular,
-            filled: true,
+            hintStyle: widget.isHint == false ? null : poppinsBody16Regular.copyWith(color: black.withOpacity(0.7)),
+            filled: false,
             fillColor: widget.enabled ? widget.fillColor : white,
             disabledBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(16),
+              borderRadius: BorderRadius.circular(10),
               borderSide: BorderSide(color: black.withOpacity(0.5), width: 2),
             ),
             enabledBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(16),
+              borderRadius: BorderRadius.circular(10),
               borderSide: BorderSide(
                   color: _showEmailError || _showPasswordError
                       ? red
@@ -186,7 +186,7 @@ class _TextFieldWidgetState extends State<CustomTextField> {
                   width: 2),
             ),
             focusedBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(16),
+              borderRadius: BorderRadius.circular(10),
               borderSide: BorderSide(
                   color: _showEmailError || _showPasswordError
                       ? red

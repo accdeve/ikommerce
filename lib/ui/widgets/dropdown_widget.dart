@@ -1,6 +1,7 @@
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
 import 'package:ikommerce/utils/colors.dart';
+import 'package:ikommerce/utils/typography.dart';
 
 class CustomDropdownButton extends StatelessWidget {
   const CustomDropdownButton({
@@ -92,9 +93,7 @@ class CustomDropdownButton extends StatelessWidget {
                         item,
                         overflow: TextOverflow.ellipsis,
                         maxLines: 1,
-                        style: const TextStyle(
-                          fontSize: 14,
-                        ),
+                        style: poppinsBody16Regular,
                       ),
                     ),
                   ))
@@ -111,7 +110,7 @@ class CustomDropdownButton extends StatelessWidget {
                 ),
             decoration: buttonDecoration ??
                 BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
+                  borderRadius: BorderRadius.circular(10),
                   border: Border.all(color: black.withOpacity(0.5), width: 2),
                 ),
             elevation: buttonElevation,
