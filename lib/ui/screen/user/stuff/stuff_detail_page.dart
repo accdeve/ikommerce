@@ -6,7 +6,7 @@ import "package:ikommerce/utils/typography.dart";
 import "package:ikommerce/utils/utils_barrel.dart";
 
 void main(List<String> args) {
-  runApp(MaterialApp(
+  runApp(const MaterialApp(
     home: DetailPage(
       namaBarang: "Mesin Bubut",
       harga: 100000,

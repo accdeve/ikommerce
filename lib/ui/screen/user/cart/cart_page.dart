@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ikommerce/ui/screen/user/cart/widget/cart_item_widget.dart';
 import 'package:ikommerce/ui/screen/user/cart/widget/cart_summary_widget.dart';
-import 'package:ikommerce/ui/widgets/button_widget.dart';
 import 'package:ikommerce/utils/colors.dart';
 import 'package:ikommerce/utils/typography.dart';
 

@@ -7,7 +7,7 @@ import 'package:ikommerce/utils/colors.dart';
 import 'package:ikommerce/utils/typography.dart';
 
 void main(List<String> args) {
-  runApp(MaterialApp(
+  runApp(const MaterialApp(
     home: CheckoutPage(),
   ));
 }

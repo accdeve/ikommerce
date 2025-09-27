@@ -58,7 +58,7 @@ class _StuffImageWidgetState extends State<StuffImageWidget> {
 
           Positioned(
             bottom: 12,
-            right: MediaQuery.maybeOf(context)!.size.width! / 2 - 30,
+            right: MediaQuery.maybeOf(context)!.size.width / 2 - 30,
             child: Container(
               padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
               decoration: BoxDecoration(
