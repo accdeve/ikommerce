@@ -1,19 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/widgets.dart';
 import 'package:ikommerce/utils/assets.dart';
 import 'package:ikommerce/utils/colors.dart';
 
 class CartIconWithBadge extends StatelessWidget {
   final int count;
-  final IconData icon;
   final double size;
+  final bool isAdmin;
 
   const CartIconWithBadge({
     super.key,
     required this.count,
-    this.icon = Icons.shopping_cart, 
-    this.size = 70, 
+    this.size = 70,
+    this.isAdmin = false, // default bukan admin
   });
 
   @override
@@ -29,10 +27,14 @@ class CartIconWithBadge extends StatelessWidget {
             border: Border.all(color: Colors.grey, width: 1),
             shape: BoxShape.circle,
           ),
-          child: Image.asset(iconCart),
+          child: Center(
+            child: isAdmin
+                ? const Icon(Icons.add, size: 32, color: Colors.black)
+                : Image.asset(iconCart),
+          ),
         ),
 
-        if (count > 0)
+        if (!isAdmin && count > 0)
           Positioned(
             right: 1,
             top: -2,
@@ -45,7 +47,7 @@ class CartIconWithBadge extends StatelessWidget {
                 boxShadow: [
                   BoxShadow(
                     color: Colors.black.withOpacity(0.25),
-                    offset: const Offset(0, 4), 
+                    offset: const Offset(0, 4),
                     blurRadius: 4,
                   ),
                 ],

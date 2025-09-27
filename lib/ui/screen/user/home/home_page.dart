@@ -49,7 +49,6 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     final bool isSearching = _focusNode.hasFocus;
 
-    // hasil dummy
     final List<String> dummyItems = List.generate(20, (i) => "Produk $i");
     final List<String> filtered = dummyItems
         .where((e) => e.toLowerCase().contains(_query.toLowerCase()))
@@ -80,7 +79,10 @@ class _HomePageState extends State<HomePage> {
           // konten utama
           SingleChildScrollView(
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                widget.isAdmin ? Text("Hai Admin Robin!", style: poppinsBody12Bold) : const SizedBox(),
+                SizedBox(height: 4),
                 const BannerSlider(
                   imageUrls: [
                     "https://www.teknikmart.com/media/wysiwyg/icon-image/jenis-mesin-potong-rumput-dan-cara-merawatnya.jpg",
@@ -100,7 +102,6 @@ class _HomePageState extends State<HomePage> {
                               onTap: () async {
                                 if (_isDeleteMode &&
                                     _selectedItems.isNotEmpty) {
-                                  // jika sudah delete mode & ada barang terpilih → konfirmasi hapus
                                   final result = await showDialog<bool>(
                                     context: context,
                                     builder: (context) => AlertDialog(
@@ -193,10 +194,10 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
 
-          const Positioned(
+           const Positioned(
             bottom: 40,
             right: 20,
-            child: CartIconWithBadge(count: 5),
+            child: CartIconWithBadge(count: 5, isAdmin: true,),
           ),
 
           if (isSearching) ...[
