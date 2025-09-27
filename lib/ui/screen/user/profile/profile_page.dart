@@ -111,6 +111,12 @@ class _ProfilePageState extends State<ProfilePage> {
             itemBuilder: (context, index) {
               final stuff = boughtStuffs[index];
               return StuffWidget(
+                isDeleteMode: false,
+                isSelected: false,
+                onSelected: () {
+                  
+                },
+                isAdmin: false,
                 stuffName: stuff["name"],
                 stuffPrice: stuff["price"],
               );

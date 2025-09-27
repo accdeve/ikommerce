@@ -3,14 +3,19 @@ import "package:ikommerce/ui/screen/user/home/widget/banner_widget.dart";
 import "package:ikommerce/ui/screen/user/home/widget/cart_icon.dart";
 import "package:ikommerce/ui/screen/user/home/widget/stuff_widget.dart";
 import "package:ikommerce/ui/widgets/text_field_widget.dart";
+import "package:ikommerce/ui/widgets/title_widget.dart";
 import "package:ikommerce/utils/utils_barrel.dart";
 
 void main(List<String> args) {
-  runApp(MaterialApp(home: HomePage()));
+  runApp(const MaterialApp(
+      home: HomePage(
+    isAdmin: true,
+  )));
 }
 
 class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+  const HomePage({super.key, required this.isAdmin});
+  final bool isAdmin;
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -20,6 +25,8 @@ class _HomePageState extends State<HomePage> {
   final TextEditingController _searchController = TextEditingController();
   final FocusNode _focusNode = FocusNode();
   String _query = "";
+  bool _isDeleteMode = false;
+  Set<int> _selectedItems = {};
 
   @override
   void initState() {
@@ -44,8 +51,9 @@ class _HomePageState extends State<HomePage> {
 
     // hasil dummy
     final List<String> dummyItems = List.generate(20, (i) => "Produk $i");
-    final List<String> filtered =
-        dummyItems.where((e) => e.toLowerCase().contains(_query.toLowerCase())).toList();
+    final List<String> filtered = dummyItems
+        .where((e) => e.toLowerCase().contains(_query.toLowerCase()))
+        .toList();
 
     return Scaffold(
       backgroundColor: Colors.white,
@@ -86,20 +94,67 @@ class _HomePageState extends State<HomePage> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text("Stuff", style: poppinsBody16Medium),
-                      Text.rich(
-                        textAlign: TextAlign.start,
-                        TextSpan(
-                          text: "Not Found? ",
-                          style: poppinsBody10Light,
-                          children: [
-                            TextSpan(
-                              text: "Request Stuff",
-                              style: poppinsBody10Medium.copyWith(color: primary),
-                            ),
-                          ],
-                        ),
-                      )
+                      titleWidget(imagePath: iconStuff, text: "Stuff"),
+                      widget.isAdmin
+                          ? GestureDetector(
+                              onTap: () async {
+                                if (_isDeleteMode &&
+                                    _selectedItems.isNotEmpty) {
+                                  // jika sudah delete mode & ada barang terpilih → konfirmasi hapus
+                                  final result = await showDialog<bool>(
+                                    context: context,
+                                    builder: (context) => AlertDialog(
+                                      title: const Text("Konfirmasi"),
+                                      content: const Text(
+                                          "Apakah kamu yakin ingin menghapus barang yang dipilih?"),
+                                      actions: [
+                                        TextButton(
+                                          onPressed: () =>
+                                              Navigator.pop(context, false),
+                                          child: const Text("Batal"),
+                                        ),
+                                        TextButton(
+                                          onPressed: () =>
+                                              Navigator.pop(context, true),
+                                          child: const Text("Hapus"),
+                                        ),
+                                      ],
+                                    ),
+                                  );
+
+                                  if (result == true) {
+                                    debugPrint(
+                                        "Barang dihapus: $_selectedItems");
+                                    setState(() {
+                                      _isDeleteMode = false;
+                                      _selectedItems.clear();
+                                    });
+                                  }
+                                } else {
+                                  // masuk/keluar delete mode
+                                  setState(() {
+                                    _isDeleteMode = !_isDeleteMode;
+                                    _selectedItems.clear();
+                                  });
+                                }
+                              },
+                              child: Image.asset(iconOrderUnread,
+                                  width: 24, height: 24),
+                            )
+                          : Text.rich(
+                              textAlign: TextAlign.start,
+                              TextSpan(
+                                text: "Not Found? ",
+                                style: poppinsBody10Light,
+                                children: [
+                                  TextSpan(
+                                    text: "Request Stuff",
+                                    style: poppinsBody10Medium.copyWith(
+                                        color: primary),
+                                  ),
+                                ],
+                              ),
+                            )
                     ],
                   ),
                 ),
@@ -116,9 +171,21 @@ class _HomePageState extends State<HomePage> {
                   ),
                   itemCount: 10,
                   itemBuilder: (context, index) {
-                    return const StuffWidget(
-                      stuffName: "Mesin Rumput asfasfaskdfhkaljhsdlfjkaf",
+                    return StuffWidget(
+                      stuffName: "Mesin Rumput $index",
                       stuffPrice: 100000,
+                      isAdmin: widget.isAdmin,
+                      isDeleteMode: _isDeleteMode,
+                      isSelected: _selectedItems.contains(index),
+                      onSelected: () {
+                        setState(() {
+                          if (_selectedItems.contains(index)) {
+                            _selectedItems.remove(index);
+                          } else {
+                            _selectedItems.add(index);
+                          }
+                        });
+                      },
                     );
                   },
                 ),
@@ -126,27 +193,23 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
 
-          // FAB cart
-          Positioned(
+          const Positioned(
             bottom: 40,
             right: 20,
             child: CartIconWithBadge(count: 5),
           ),
 
-          // overlay gelap + hasil pencarian
           if (isSearching) ...[
             Positioned.fill(
               child: GestureDetector(
                 onTap: () {
-                  _focusNode.unfocus(); 
+                  _focusNode.unfocus();
                 },
                 child: Container(
                   color: Colors.black.withOpacity(0.3),
                 ),
               ),
             ),
-
-            // hasil pencarian
             Positioned(
               top: kToolbarHeight,
               left: 0,
