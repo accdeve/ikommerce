@@ -1,7 +1,7 @@
 import "package:flutter/material.dart";
-import "package:ikommerce/ui/screen/user/home/widget/banner_widget.dart";
-import "package:ikommerce/ui/screen/user/home/widget/cart_icon.dart";
-import "package:ikommerce/ui/screen/user/home/widget/stuff_widget.dart";
+import "package:ikommerce/ui/screen/global/home/widget/banner_widget.dart";
+import "package:ikommerce/ui/screen/global/home/widget/cart_icon.dart";
+import "package:ikommerce/ui/screen/global/home/widget/stuff_widget.dart";
 import "package:ikommerce/ui/widgets/text_field_widget.dart";
 import "package:ikommerce/ui/widgets/title_widget.dart";
 import "package:ikommerce/utils/utils_barrel.dart";

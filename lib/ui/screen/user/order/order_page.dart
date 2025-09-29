@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:ikommerce/ui/screen/user/order/widget/order_widget.dart';
+import 'package:ikommerce/ui/screen/global/order/widget/order_widget.dart';
 import 'package:ikommerce/utils/assets.dart';
 import 'package:ikommerce/utils/typography.dart';
 
@@ -32,7 +31,14 @@ class OrderPage extends StatelessWidget {
         child: ListView.separated(
           itemCount: 20,
           itemBuilder: (context, index) {
-            return const OrderWidget();
+            return const OrderWidget(
+                      status: OrderStatus.paid,
+                      product: "asdfasdfasdfads",
+                      amount: 2,
+                      user: "asalsjkd",
+                      date: "10-09-2004",
+                      isAdmin: true,
+                    );
           },
           separatorBuilder: (context, index) =>
               const SizedBox(height: 12),

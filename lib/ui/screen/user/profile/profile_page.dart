@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:ikommerce/ui/screen/user/home/widget/stuff_widget.dart';
+import 'package:ikommerce/ui/screen/global/home/widget/stuff_widget.dart';
 import 'package:ikommerce/ui/screen/user/profile/widget/address_widget.dart';
 import 'package:ikommerce/utils/typography.dart';
 import 'package:ikommerce/utils/utils_barrel.dart';
