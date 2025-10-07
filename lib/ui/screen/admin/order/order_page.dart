@@ -1,13 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ikommerce/ui/screen/global/order/widget/order_widget.dart';
-import 'package:ikommerce/utils/colors.dart';
-import 'package:ikommerce/utils/typography.dart';
-
-void main(List<String> args) {
-  runApp(MaterialApp(
-    home: OrderPage(),
-  ));
-}
+import 'package:ikommerce/utils/utils_barrel.dart';
 
 class OrderPage extends StatefulWidget {
   const OrderPage({super.key});
@@ -25,13 +18,18 @@ class _OrderPageState extends State<OrderPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
+        backgroundColor: white,
+        elevation: 0,
+        title: Text(
           "Order",
-          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+          style: poppins20SemiBold,
         ),
         centerTitle: true,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back),
+          icon: const Icon(
+            Icons.arrow_back,
+            color: black,
+          ),
           onPressed: () => Navigator.pop(context),
         ),
         actions: const [
@@ -42,7 +40,7 @@ class _OrderPageState extends State<OrderPage> {
         ],
       ),
       body: ListView(
-        padding: const EdgeInsets.all(16),
+        padding: const EdgeInsets.all(18),
         children: [
           _buildSection(
             title: "Paid",
@@ -65,7 +63,6 @@ class _OrderPageState extends State<OrderPage> {
               },
             ],
           ),
-          const SizedBox(height: 20),
           _buildSection(
             title: "Unpaid",
             expanded: expandedUnpaid,
@@ -87,7 +84,6 @@ class _OrderPageState extends State<OrderPage> {
               },
             ],
           ),
-          const SizedBox(height: 20),
           _buildSection(
             title: "Request Stuff",
             expanded: expandedRequest,

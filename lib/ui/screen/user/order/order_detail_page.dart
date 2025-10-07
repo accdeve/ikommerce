@@ -7,12 +7,6 @@ import 'package:ikommerce/utils/colors.dart';
 import 'package:ikommerce/utils/extensions.dart';
 import 'package:ikommerce/utils/typography.dart';
 
-void main(List<String> args) {
-  runApp(const MaterialApp(
-    home: OrderDetailPage(),
-  ));
-}
-
 class OrderDetailPage extends StatelessWidget {
   const OrderDetailPage({super.key});
 
@@ -22,13 +16,14 @@ class OrderDetailPage extends StatelessWidget {
       backgroundColor: white,
       appBar: AppBar(
         backgroundColor: white,
+        elevation: 0,
         title: Text(
           "Order Detail",
           style: poppins20SemiBold,
         ),
         centerTitle: true,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back),
+          icon: const Icon(Icons.arrow_back, color: black,),
           onPressed: () {
             Navigator.pop(context);
           },
@@ -51,7 +46,9 @@ class OrderDetailPage extends StatelessWidget {
               //stuff
               titleWidget(imagePath: iconStuff, text: "Stuff"),
               stuffWidget(2, "stuffName", 1000000),
+              SizedBox(height: 20),
               stuffWidget(2, "stuffName", 1000000),
+              SizedBox(height: 20),
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [

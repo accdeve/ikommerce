@@ -158,15 +158,11 @@ class _TextFieldWidgetState extends State<CustomTextField> {
             isDense: widget.isDense,
             errorMaxLines: 2,
             prefixIcon: widget.prefixIcons,
-            contentPadding: EdgeInsets.fromLTRB(
-                10,
-                widget.isCompact ? 10 : 12,
-                widget.inputType == InputType.password ||
-                        widget.inputType == InputType.option ||
-                        widget.inputType == InputType.search
-                    ? 4
-                    : 20,
-                widget.isCompact ? 4 : 12),
+            contentPadding: EdgeInsets.symmetric(
+  horizontal: 12,
+  vertical: widget.isCompact ? 10 : 12,
+),
+
             hintText: widget.inputType == InputType.phone && _focus.hasFocus
                 ? null
                 : widget.hintText,

@@ -1,17 +1,14 @@
 import "package:flutter/material.dart";
+import "package:ikommerce/ui/screen/admin/order/order_page.dart" as admin;
+import "package:ikommerce/ui/screen/user/order/order_page.dart" as user;
 import "package:ikommerce/ui/screen/global/home/widget/banner_widget.dart";
 import "package:ikommerce/ui/screen/global/home/widget/cart_icon.dart";
 import "package:ikommerce/ui/screen/global/home/widget/stuff_widget.dart";
+import "package:ikommerce/ui/screen/user/profile/profile_page.dart";
+import "package:ikommerce/ui/screen/user/request_stuff/request_stuff.dart";
 import "package:ikommerce/ui/widgets/text_field_widget.dart";
 import "package:ikommerce/ui/widgets/title_widget.dart";
 import "package:ikommerce/utils/utils_barrel.dart";
-
-void main(List<String> args) {
-  runApp(const MaterialApp(
-      home: HomePage(
-    isAdmin: true,
-  )));
-}
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key, required this.isAdmin});
@@ -55,23 +52,37 @@ class _HomePageState extends State<HomePage> {
         .toList();
 
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: const Color.fromRGBO(255, 255, 255, 1),
       appBar: AppBar(
         backgroundColor: Colors.white,
+        elevation: 0,
         actions: [
-          Image.asset(iconOrderHasRead, width: 24, height: 24),
+          InkWell(
+              onTap: () {
+                pushScreen(context, const user.OrderPage());
+              },
+              child: Image.asset(iconOrderHasRead, width: 24, height: 24)),
           const SizedBox(width: 12),
-          Image.asset(iconProfile, width: 24, height: 24),
+          InkWell(
+              onTap: () {
+                pushScreen(context, ProfilePage());
+              },
+              child: Image.asset(iconProfile, width: 24, height: 24)),
           const SizedBox(width: 12),
         ],
-        title: CustomTextField(
-          controller: _searchController,
-          focusNode: _focusNode,
-          isCompact: true,
-          fillColor: white,
-          isUsingPadding: false,
-          hintText: "Search",
-          prefixIcons: const Icon(Icons.search, size: 16),
+        title: Column(
+          children: [
+            const SizedBox(height: 5),
+            CustomTextField(
+              controller: _searchController,
+              focusNode: _focusNode,
+              isCompact: true,
+              fillColor: white,
+              isUsingPadding: false,
+              hintText: "Search",
+              prefixIcons: const Icon(Icons.search, size: 20),
+            ),
+          ],
         ),
       ),
       body: Stack(
@@ -81,8 +92,10 @@ class _HomePageState extends State<HomePage> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                widget.isAdmin ? Text("Hai Admin Robin!", style: poppinsBody12Bold) : const SizedBox(),
-                SizedBox(height: 4),
+                widget.isAdmin
+                    ? Text("Hai Admin Robin!", style: poppinsBody12Bold)
+                    : const SizedBox(),
+                const SizedBox(height: 4),
                 const BannerSlider(
                   imageUrls: [
                     "https://www.teknikmart.com/media/wysiwyg/icon-image/jenis-mesin-potong-rumput-dan-cara-merawatnya.jpg",
@@ -142,18 +155,23 @@ class _HomePageState extends State<HomePage> {
                               child: Image.asset(iconOrderUnread,
                                   width: 24, height: 24),
                             )
-                          : Text.rich(
-                              textAlign: TextAlign.start,
-                              TextSpan(
-                                text: "Not Found? ",
-                                style: poppinsBody10Light,
-                                children: [
-                                  TextSpan(
-                                    text: "Request Stuff",
-                                    style: poppinsBody10Medium.copyWith(
-                                        color: primary),
-                                  ),
-                                ],
+                          : InkWell(
+                              onTap: () {
+                                pushScreen(context, RequestStuffPage());
+                              },
+                              child: Text.rich(
+                                textAlign: TextAlign.start,
+                                TextSpan(
+                                  text: "Not Found? ",
+                                  style: poppinsBody10Light,
+                                  children: [
+                                    TextSpan(
+                                      text: "Request Stuff",
+                                      style: poppinsBody10Medium.copyWith(
+                                          color: primary),
+                                    ),
+                                  ],
+                                ),
                               ),
                             )
                     ],
@@ -194,10 +212,13 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
 
-           const Positioned(
+          const Positioned(
             bottom: 40,
             right: 20,
-            child: CartIconWithBadge(count: 5, isAdmin: true,),
+            child: CartIconWithBadge(
+              count: 5,
+              isAdmin: true,
+            ),
           ),
 
           if (isSearching) ...[

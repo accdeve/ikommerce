@@ -1,0 +1,87 @@
+list tabel ikommerce
+
+1. user
+    id
+    name
+    username
+    email
+    password
+    no_handphone
+    alamat {
+        {
+            provinsi
+            city
+            subdistirct
+            ward
+            pos code
+            street
+            house number
+        }
+        -
+    }
+    created_at
+    updated_at
+
+2. stuff
+    id
+    name
+    list_stuff_ready
+    {
+        name
+        quantity
+        price
+        total
+        image {}
+    }
+    list_stuff_request{
+      name
+      type
+      deskripsi  
+    }
+    created_at
+    updated_at
+
+3. order (user)
+    id
+    status
+    price
+    list_stuff
+        {
+            name
+            quantity
+            price
+            total
+        }
+    address
+    created_at
+    updated_at
+
+4. order (admin)
+    id
+    tipe [ready, request]
+    user{
+        name
+        email
+        no_handphone
+        alamat
+    }
+    list_stuff_ready
+        {
+            name
+            quantity
+            price
+            total
+        }
+    list_stuff_request{
+      name
+      type
+      deskripsi  
+    }
+    status
+        
+
+5. cart
+    id
+    name
+    price
+    quantity

@@ -7,14 +7,19 @@ Widget titleWidget({
   required String text,
   TextStyle? textStyle,
 }) {
-  return Row(
+  return Column(
     children: [
-      Image.asset(imagePath),
-      const SizedBox(width: 8), // jarak default biar gak terlalu nempel
-      Text(
-        text,
-        style: textStyle ?? poppinsBody16Bold, // default style tetap poppinsBody16Bold
+      Row(
+        children: [
+          Image.asset(imagePath),
+          const SizedBox(width: 8), // jarak default biar gak terlalu nempel
+          Text(
+            text,
+            style: textStyle ?? poppinsBody16Bold, // default style tetap poppinsBody16Bold
+          ),
+        ],
       ),
+      SizedBox(height: 8,)
     ],
   );
 }

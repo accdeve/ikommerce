@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:ikommerce/ui/widgets/button_widget.dart';
 import 'package:ikommerce/ui/widgets/title_widget.dart';
 import 'package:ikommerce/utils/assets.dart';
+import 'package:ikommerce/utils/colors.dart';
 import 'package:ikommerce/utils/typography.dart';
+import 'package:ikommerce/utils/utils_barrel.dart';
 
 void main(List<String> args) {
   runApp(const MaterialApp(
@@ -50,8 +52,11 @@ class _OrderDetailPageState extends State<OrderDetailPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Order Detail"),
-        leading: const BackButton(),
+        backgroundColor: white,
+        elevation: 0,
+        title: Text("Order Detail", style: poppins20SemiBold,),
+        centerTitle: true,
+        leading: const BackButton(color: black,),
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16),
