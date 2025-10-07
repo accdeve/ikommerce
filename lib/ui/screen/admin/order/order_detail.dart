@@ -51,8 +51,9 @@ class _OrderDetailPageState extends State<OrderDetailPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: white,
+        backgroundColor: Colors.white,
         elevation: 0,
         title: Text("Order Detail", style: poppins20SemiBold,),
         centerTitle: true,

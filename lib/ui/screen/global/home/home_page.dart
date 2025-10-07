@@ -217,7 +217,7 @@ class _HomePageState extends State<HomePage> {
             right: 20,
             child: CartIconWithBadge(
               count: 5,
-              isAdmin: true,
+              isAdmin: false,
             ),
           ),
 

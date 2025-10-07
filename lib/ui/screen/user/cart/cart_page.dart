@@ -18,7 +18,7 @@ class CartPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: white,
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: white,
         elevation: 0,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: Colors.black),

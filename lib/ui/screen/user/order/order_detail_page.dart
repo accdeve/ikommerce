@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ikommerce/ui/screen/user/cart/cart_page.dart';
 import 'package:ikommerce/ui/screen/user/order/widget/list_stuff_widget.dart';
 import 'package:ikommerce/ui/widgets/button_widget.dart';
 import 'package:ikommerce/ui/widgets/title_widget.dart';
@@ -23,12 +24,21 @@ class OrderDetailPage extends StatelessWidget {
         ),
         centerTitle: true,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: black,),
+          icon: const Icon(
+            Icons.arrow_back,
+            color: black,
+          ),
           onPressed: () {
             Navigator.pop(context);
           },
         ),
-        actions: [Image.asset(iconCart)],
+        actions: [
+          InkWell(
+              onTap: () {
+                pushScreen(context, const CartPage());
+              },
+              child: Image.asset(iconCart))
+        ],
       ),
       body: Padding(
         padding: const EdgeInsets.fromLTRB(16, 24, 16, 16),
@@ -46,9 +56,9 @@ class OrderDetailPage extends StatelessWidget {
               //stuff
               titleWidget(imagePath: iconStuff, text: "Stuff"),
               stuffWidget(2, "stuffName", 1000000),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               stuffWidget(2, "stuffName", 1000000),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
